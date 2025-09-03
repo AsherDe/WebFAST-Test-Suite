@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product A - Smartphone Specifications</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="main-header">
+            <h1>Product A - Advanced Smartphone</h1>
+            <p class="text-subtle">Professional-grade mobile device with cutting-edge features</p>
+        </header>
+
+        <main>
+            <section>
+                <h2>Product Specifications</h2>
+                
+                <div class="specs-container">
+                    <div class="spec-item">
+                        <span class="spec-label">Model Name:</span>
+                        <span class="spec-value" id="model-name">TechPhone Pro X1</span>
+                    </div>
+                    
+                    <div class="spec-item">
+                        <span class="spec-label">Price:</span>
+                        <span class="spec-value" id="price">$899</span>
+                    </div>
+                    
+                    <div class="spec-item">
+                        <span class="spec-label">Screen Size:</span>
+                        <span class="spec-value" id="screen-size">6.7 inches</span>
+                    </div>
+                    
+                    <div class="spec-item">
+                        <span class="spec-label">Storage:</span>
+                        <span class="spec-value" id="storage">256GB</span>
+                    </div>
+                    
+                    <div class="spec-item">
+                        <span class="spec-label">RAM:</span>
+                        <span class="spec-value" id="ram">12GB</span>
+                    </div>
+                    
+                    <div class="spec-item">
+                        <span class="spec-label">Battery:</span>
+                        <span class="spec-value" id="battery">4500mAh</span>
+                    </div>
+                    
+                    <div class="spec-item">
+                        <span class="spec-label">Camera:</span>
+                        <span class="spec-value" id="camera">108MP Triple Camera System</span>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Key Features</h2>
+                <div class="features-list">
+                    <div class="feature">5G Network Support</div>
+                    <div class="feature">Wireless Charging</div>
+                    <div class="feature">Water Resistant (IP68)</div>
+                    <div class="feature">Face Recognition</div>
+                    <div class="feature">Fingerprint Scanner</div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Testing Instructions</h2>
+                <div class="callout callout-info">
+                    <p><strong>Data Extraction Target:</strong> Copy the following key specifications:</p>
+                    <ul>
+                        <li>Model Name</li>
+                        <li>Price</li>
+                        <li>Storage</li>
+                        <li>RAM</li>
+                    </ul>
+                    <p>Navigate to the report page and paste this information into the corresponding fields.</p>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <style>
+        .specs-container {
+            display: grid;
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+        
+        .spec-item {
+            background-color: #f8f9fa;
+            padding: 1rem;
+            border-radius: 6px;
+            display: flex;
+            justify-content: space-between;
+            border-left: 3px solid var(--color-primary);
+        }
+        
+        .spec-label {
+            font-weight: 600;
+            color: var(--color-text);
+        }
+        
+        .spec-value {
+            color: var(--color-primary);
+            font-weight: 500;
+        }
+        
+        .features-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 0.5rem;
+            margin: 1rem 0;
+        }
+        
+        .feature {
+            background-color: var(--color-primary-bg);
+            padding: 0.75rem;
+            border-radius: 4px;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+    </style>
+</body>
+</html>

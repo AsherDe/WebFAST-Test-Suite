@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebFAST Pattern Recognition Test Suite</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="main-header">
+            <h1>WebFAST Pattern Recognition Test Suite</h1>
+            <p class="text-subtle">A comprehensive experimental platform designed to evaluate WebFAST browsing behavior pattern recognition algorithms and validate core assumptions about web automation and user workflow discovery.</p>
+        </header>
+
+        <main>
+            <div class="grid grid-3-col">
+                <a href="workflow/portal.html" class="nav-card">
+                    <span class="icon">🔄</span>
+                    <h3>Cross-Tab Workflow</h3>
+                    <p>Test WorkflowClonerPlugin's pattern discovery and automation capabilities across complex multi-step, cross-tab tasks. Simulates real-world scenarios where users gather information from multiple sources.</p>
+                </a>
+
+                <a href="tasks/micro_tasks.html" class="nav-card">
+                    <span class="icon">🎯</span>
+                    <h3>Micro-Tasks</h3>
+                    <p>Generate semantically labeled data for WebFAST representation validation. Test feature space separability with clearly defined behavioral patterns within a single interface.</p>
+                </a>
+
+                <a href="robustness/dom_robustness.html" class="nav-card">
+                    <span class="icon">🛡️</span>
+                    <h3>DOM Robustness</h3>
+                    <p>Stress test feature extraction algorithms (especially getCssSelector) against irregular, dynamic DOM structures. Validate stability and generalization capabilities.</p>
+                </a>
+            </div>
+
+            <section>
+                <h2>Testing Methodology</h2>
+                <p>Each scenario is designed as an independent experiment to validate different aspects of the WebFAST system:</p>
+                <ul>
+                    <li><strong>Workflow Scenario:</strong> Tests cross-page pattern recognition and workflow automation in realistic multi-tab environments</li>
+                    <li><strong>Micro-Tasks:</strong> Provides ground truth data for feature extraction validation with known semantic boundaries</li>
+                    <li><strong>Robustness Testing:</strong> Validates algorithm stability against edge cases and malformed DOM structures</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Usage Instructions</h2>
+                <div class="callout callout-info">
+                    <p><strong>For Researchers:</strong> Each test scenario includes specific measurement points and validation criteria. Record behavioral patterns, feature extraction accuracy, and system performance metrics.</p>
+                    <p><strong>For Algorithm Testing:</strong> Run your WebFAST algorithms on each scenario and compare results against expected behaviors documented within each test page.</p>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>

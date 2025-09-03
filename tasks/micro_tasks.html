@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Micro-Tasks Collection - WebFAST Test</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="main-header">
+            <h1>Micro-Tasks Collection</h1>
+            <p class="text-subtle">Semantic Behavior Pattern Testing Environment</p>
+        </header>
+
+        <main>
+            <!-- Task 1: Search -->
+            <section id="search-task">
+                <h2>Task 1: Search Interface</h2>
+                <p>This section tests search behavior patterns and query input recognition.</p>
+                
+                <div class="task-container">
+                    <div class="search-interface">
+                        <label for="search-input">Search Query:</label>
+                        <input type="text" id="search-input" placeholder="Enter your search terms here..." />
+                        <button type="button" id="search-button" class="btn btn-primary">🔍 Search</button>
+                    </div>
+                    
+                    <div id="search-results" class="results-area" style="display: none;">
+                        <h4>Search Results:</h4>
+                        <div class="result-item">Result 1: WebFAST Pattern Recognition</div>
+                        <div class="result-item">Result 2: Automated Web Testing</div>
+                        <div class="result-item">Result 3: DOM Feature Extraction</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Task 2: Navigation -->
+            <section id="navigation-task">
+                <h2>Task 2: Navigation Links</h2>
+                <p>This section tests navigation behavior patterns and link interaction recognition.</p>
+                
+                <div class="task-container">
+                    <div class="navigation-menu">
+                        <h4>Website Navigation:</h4>
+                        <div class="nav-links">
+                            <a href="#home" id="nav-home" class="nav-link">🏠 Home</a>
+                            <a href="#products" id="nav-products" class="nav-link">📦 Products</a>
+                            <a href="#services" id="nav-services" class="nav-link">🛠️ Services</a>
+                            <a href="#contact" id="nav-contact" class="nav-link">📞 Contact</a>
+                        </div>
+                    </div>
+                    
+                    <div id="navigation-feedback" class="feedback-area">
+                        <p>Click on navigation links to test link recognition patterns.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Task 3: Data Entry -->
+            <section id="data-entry-task">
+                <h2>Task 3: Data Entry Form</h2>
+                <p>This section tests form interaction patterns and data input recognition.</p>
+                
+                <div class="task-container">
+                    <form id="user-data-form" class="data-entry-form">
+                        <div class="form-group">
+                            <label for="user-name">Full Name:</label>
+                            <input type="text" id="user-name" name="user_name" placeholder="Enter your full name" />
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="user-email">Email Address:</label>
+                            <input type="email" id="user-email" name="user_email" placeholder="your.email@example.com" />
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="user-role">Role:</label>
+                            <select id="user-role" name="user_role">
+                                <option value="">Select your role...</option>
+                                <option value="researcher">Researcher</option>
+                                <option value="developer">Developer</option>
+                                <option value="analyst">Data Analyst</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-success">💾 Save Information</button>
+                    </form>
+                </div>
+            </section>
+
+            <!-- Task 4: Copy-Paste Operations -->
+            <section id="copy-paste-task">
+                <h2>Task 4: Copy-Paste Operations</h2>
+                <p>This section tests copy-paste behavior patterns and text manipulation recognition.</p>
+                
+                <div class="task-container">
+                    <div class="copy-paste-demo">
+                        <div class="source-section">
+                            <h4>Source Text:</h4>
+                            <div class="source-text" id="source-text">
+WebFAST Algorithm Configuration:
+- Pattern Recognition: Enabled
+- Feature Extraction: getCssSelector v2.1
+- Workflow Detection: Cross-tab mode
+- Automation Level: Semi-supervised
+- Data Collection: Real-time monitoring
+- Analysis Mode: Behavioral clustering
+                            </div>
+                            <button type="button" id="copy-source-btn" class="btn btn-secondary">📋 Copy Text</button>
+                        </div>
+                        
+                        <div class="destination-section">
+                            <h4>Destination Area:</h4>
+                            <textarea id="paste-area" placeholder="Paste the copied text here..."></textarea>
+                            <button type="button" id="paste-btn" class="btn btn-secondary">📄 Paste</button>
+                            <button type="button" id="clear-paste-btn" class="btn btn-danger">🗑️ Clear</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Testing Instructions -->
+            <section id="testing-instructions">
+                <h2>Testing Methodology</h2>
+                <div class="callout callout-info">
+                    <h3>Behavioral Pattern Categories:</h3>
+                    <ul>
+                        <li><strong>Search Patterns:</strong> Text input → Button click → Result interaction</li>
+                        <li><strong>Navigation Patterns:</strong> Link selection → Page/section changes</li>
+                        <li><strong>Form Patterns:</strong> Sequential field completion → Validation → Submission</li>
+                        <li><strong>Copy-Paste Patterns:</strong> Text selection → Copy → Navigate → Paste</li>
+                    </ul>
+                    
+                    <h3>WebFAST Validation Criteria:</h3>
+                    <p>Each task should generate distinct feature vectors that allow the algorithm to:</p>
+                    <ol>
+                        <li>Classify the interaction type correctly</li>
+                        <li>Predict the next likely user action</li>
+                        <li>Identify workflow completion patterns</li>
+                        <li>Distinguish between similar but semantically different actions</li>
+                    </ol>
+                </div>
+            </section>
+
+            <!-- Performance Metrics -->
+            <section id="metrics-section">
+                <h2>Performance Tracking</h2>
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <h4>Task Completions</h4>
+                        <div class="metric-value" id="task-count">0</div>
+                    </div>
+                    <div class="metric-card">
+                        <h4>Pattern Switches</h4>
+                        <div class="metric-value" id="pattern-switches">0</div>
+                    </div>
+                    <div class="metric-card">
+                        <h4>Success Rate</h4>
+                        <div class="metric-value" id="success-rate">0%</div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <style>
+        .task-container {
+            background-color: #f8f9fa;
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            margin: 1rem 0;
+            border-left: 4px solid var(--color-primary);
+        }
+        
+        .search-interface {
+            display: flex;
+            gap: 1rem;
+            align-items: end;
+            flex-wrap: wrap;
+            margin-bottom: 1rem;
+        }
+        
+        .search-interface label {
+            margin-bottom: 0.5rem;
+        }
+        
+        .search-interface input {
+            flex: 1;
+            min-width: 250px;
+        }
+        
+        .results-area {
+            margin-top: 1.5rem;
+            padding: 1rem;
+            background-color: white;
+            border-radius: 4px;
+            border: 1px solid var(--color-border);
+        }
+        
+        .result-item {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #eee;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+        
+        .result-item:hover {
+            background-color: var(--color-primary-bg);
+        }
+        
+        .result-item:last-child {
+            border-bottom: none;
+        }
+        
+        .navigation-menu h4 {
+            margin-bottom: 1rem;
+        }
+        
+        .nav-link {
+            background-color: white;
+            border: 1px solid var(--color-border);
+        }
+        
+        .nav-link:hover {
+            background-color: var(--color-primary-bg);
+            border-color: var(--color-primary);
+        }
+        
+        .feedback-area {
+            margin-top: 1rem;
+            padding: 1rem;
+            background-color: white;
+            border-radius: 4px;
+            border: 1px solid var(--color-border);
+            text-align: center;
+            color: var(--color-text-subtle);
+        }
+        
+        .data-entry-form {
+            background-color: white;
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            border: 1px solid var(--color-border);
+        }
+        
+        .copy-paste-demo {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: start;
+        }
+        
+        .source-section,
+        .destination-section {
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            border: 1px solid var(--color-border);
+        }
+        
+        .source-text {
+            background-color: #f1f3f4;
+            padding: 1rem;
+            border-radius: 4px;
+            margin: 1rem 0;
+            font-family: var(--font-mono);
+            font-size: 0.9rem;
+            white-space: pre-line;
+            user-select: all;
+            cursor: text;
+        }
+        
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+        
+        .metric-card {
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            border: 1px solid var(--color-border);
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .metric-card h4 {
+            margin-bottom: 1rem;
+            color: var(--color-text-subtle);
+            font-size: 1rem;
+        }
+        
+        .metric-value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--color-primary);
+        }
+        
+        @media (max-width: 768px) {
+            .search-interface {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            
+            .copy-paste-demo {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+
+    <script>
+        // Performance tracking variables
+        let taskCount = 0;
+        let patternSwitches = 0;
+        let lastTaskType = '';
+
+        function updateMetrics() {
+            document.getElementById('task-count').textContent = taskCount;
+            document.getElementById('pattern-switches').textContent = patternSwitches;
+            const successRate = taskCount > 0 ? Math.round((taskCount / (taskCount + patternSwitches)) * 100) : 0;
+            document.getElementById('success-rate').textContent = successRate + '%';
+        }
+
+        function trackTask(taskType) {
+            if (lastTaskType && lastTaskType !== taskType) {
+                patternSwitches++;
+            }
+            taskCount++;
+            lastTaskType = taskType;
+            updateMetrics();
+        }
+
+        // Search functionality
+        document.getElementById('search-button').addEventListener('click', function() {
+            const query = document.getElementById('search-input').value.trim();
+            const resultsArea = document.getElementById('search-results');
+            
+            if (query) {
+                resultsArea.style.display = 'block';
+                trackTask('search');
+            } else {
+                alert('Please enter a search query.');
+            }
+        });
+
+        document.getElementById('search-input').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                document.getElementById('search-button').click();
+            }
+        });
+
+        // Navigation functionality
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const feedback = document.getElementById('navigation-feedback');
+                const linkText = this.textContent.trim();
+                feedback.innerHTML = `<p><strong>Navigation clicked:</strong> ${linkText}</p>`;
+                trackTask('navigation');
+            });
+        });
+
+        // Data entry functionality
+        document.getElementById('user-data-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('user-name').value.trim();
+            const email = document.getElementById('user-email').value.trim();
+            const role = document.getElementById('user-role').value;
+            
+            if (name && email && role) {
+                alert('Data saved successfully!');
+                trackTask('form');
+            } else {
+                alert('Please complete all required fields.');
+            }
+        });
+
+        // Copy-paste functionality
+        document.getElementById('copy-source-btn').addEventListener('click', async function() {
+            const sourceText = document.getElementById('source-text').textContent;
+            
+            try {
+                await navigator.clipboard.writeText(sourceText);
+                this.textContent = '✅ Copied!';
+                setTimeout(() => {
+                    this.textContent = '📋 Copy Text';
+                }, 2000);
+                trackTask('copy');
+            } catch (err) {
+                // Fallback for browsers that don't support clipboard API
+                const textArea = document.createElement('textarea');
+                textArea.value = sourceText;
+                document.body.appendChild(textArea);
+                textArea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textArea);
+                
+                this.textContent = '✅ Copied!';
+                setTimeout(() => {
+                    this.textContent = '📋 Copy Text';
+                }, 2000);
+                trackTask('copy');
+            }
+        });
+
+        document.getElementById('paste-btn').addEventListener('click', async function() {
+            const pasteArea = document.getElementById('paste-area');
+            
+            try {
+                const text = await navigator.clipboard.readText();
+                pasteArea.value = text;
+                trackTask('paste');
+            } catch (err) {
+                alert('Please use Ctrl+V (or Cmd+V) to paste into the text area.');
+            }
+        });
+
+        document.getElementById('clear-paste-btn').addEventListener('click', function() {
+            document.getElementById('paste-area').value = '';
+            trackTask('clear');
+        });
+
+        // Result item interactions
+        document.addEventListener('click', function(e) {
+            if (e.target.classList.contains('result-item')) {
+                e.target.style.backgroundColor = var(--color-primary-bg);
+                setTimeout(() => {
+                    e.target.style.backgroundColor = '';
+                }, 300);
+                trackTask('result-click');
+            }
+        });
+
+        // Initialize metrics
+        updateMetrics();
+    </script>
+</body>
+</html>

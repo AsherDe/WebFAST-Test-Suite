@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Robustness Testing - WebFAST Test</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="main-header">
+            <h1>DOM Robustness Testing</h1>
+            <p class="text-subtle">Stress Testing Environment for getCssSelector Algorithm</p>
+        </header>
+
+        <main>
+            <!-- Dynamic ID Test -->
+            <section id="dynamic-id-section">
+                <h2>Test 1: Dynamic ID Elements</h2>
+                <p>This test challenges selector algorithms with elements that change their ID attributes dynamically.</p>
+                
+                <div class="nested-container">
+                    <button id="dynamic-id-btn" class="btn btn-primary">🔄 Dynamic ID Button</button>
+                    <p class="test-description">
+                        <strong>Challenge:</strong> Each click changes this button's ID. WebFAST must adapt its selector strategy in real-time.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Deeply Nested Elements -->
+            <section id="deep-nesting-section">
+                <h2>Test 2: Deeply Nested DOM Structure</h2>
+                <p>Tests selector generation for elements buried deep within nested containers.</p>
+                
+                <div class="nested-container deeply-nested">
+                    <div class="level-1">
+                        <div class="level-2">
+                            <div class="level-3">
+                                <div class="level-4">
+                                    <div class="level-5">
+                                        <span class="target-element">🎯 Deeply Nested Target</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="nested-container deeply-nested">
+                    <article>
+                        <section>
+                            <div>
+                                <p>
+                                    <span class="target-element">📍 Alternative Nesting Pattern</span>
+                                </p>
+                            </div>
+                        </section>
+                    </article>
+                </div>
+            </section>
+
+            <!-- ARIA Role Elements -->
+            <section id="aria-elements-section">
+                <h2>Test 3: ARIA Role-Based Elements</h2>
+                <p>Tests recognition and selection of elements using ARIA roles instead of standard HTML semantics.</p>
+                
+                <div class="nested-container">
+                    <div role="button" tabindex="0" class="aria-button">🎯 ARIA Role Button</div>
+                    <p class="test-description">
+                        <strong>Challenge:</strong> This div acts as a button through ARIA roles. Algorithms must recognize interactive elements beyond standard HTML buttons.
+                    </p>
+                </div>
+
+                <div class="nested-container">
+                    <div role="navigation" aria-label="Test Navigation">
+                        <div role="menubar">
+                            <div role="menuitem" tabindex="0">Menu Item 1</div>
+                            <div role="menuitem" tabindex="0">Menu Item 2</div>
+                            <div role="menuitem" tabindex="0">Menu Item 3</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- No Stable Identifiers -->
+            <section id="unstable-elements-section">
+                <h2>Test 4: Elements Without Stable Identifiers</h2>
+                <p>Elements with no IDs, generic classes, or distinguishing attributes.</p>
+                
+                <div class="nested-container">
+                    <ul id="unstable-list">
+                        <li>List item without unique identifiers</li>
+                        <li>Another generic list item</li>
+                        <li>Yet another item in the list</li>
+                        <li>Fourth item with no distinguishing features</li>
+                        <li>Final item in this challenging list</li>
+                    </ul>
+                    <p class="test-description">
+                        <strong>Challenge:</strong> These list items have no unique identifiers. Algorithms must rely on position, content, or structural patterns.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Complex Form Structure -->
+            <section id="complex-form-section">
+                <h2>Test 5: Complex Form with Dynamic Structure</h2>
+                <p>Form elements with dynamically changing structure and validation states.</p>
+                
+                <div class="nested-container">
+                    <form id="complex-test-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Field with changing validation</label>
+                                <input type="text" class="form-input" data-validation="dynamic">
+                                <div class="validation-message" style="display: none;"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="conditional-section" style="display: none;">
+                            <div class="form-group">
+                                <label>Conditional field (appears/disappears)</label>
+                                <select class="form-select">
+                                    <option>Option 1</option>
+                                    <option>Option 2</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <button type="button" class="btn btn-secondary" onclick="toggleConditionalField()">
+                            Toggle Conditional Field
+                        </button>
+                    </form>
+                </div>
+            </section>
+
+            <!-- Stress Test Section -->
+            <section id="stress-test-section">
+                <h2>Test 6: Dynamic DOM Manipulation</h2>
+                <p>Real-time DOM structure changes to test algorithm adaptation.</p>
+                
+                <div class="nested-container">
+                    <div id="stress-test-container">
+                        <p>Click "Run Stress Test" to generate dynamic DOM structure</p>
+                    </div>
+                    
+                    <div class="test-controls">
+                        <button id="run-stress-test-btn" class="btn btn-primary">⚡ Run Stress Test</button>
+                        <button id="reset-tests-btn" class="btn btn-secondary">🔄 Reset All Tests</button>
+                        <button id="export-results-btn" class="btn btn-success">💾 Export Results</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Testing Metrics -->
+            <section id="metrics-section">
+                <h2>Real-Time Testing Metrics</h2>
+                <div id="test-metrics" class="metrics-grid">
+                    <div class="metric-card">
+                        <h4>Total Events</h4>
+                        <div class="metric-value">0</div>
+                    </div>
+                    <div class="metric-card">
+                        <h4>Event Types</h4>
+                        <div class="metric-value">0</div>
+                    </div>
+                    <div class="metric-card">
+                        <h4>Test Duration</h4>
+                        <div class="metric-value">0s</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Algorithm Challenges -->
+            <section id="algorithm-challenges-section">
+                <h2>Algorithm Validation Criteria</h2>
+                <div class="callout callout-info">
+                    <h3>getCssSelector Robustness Tests:</h3>
+                    <ul>
+                        <li><strong>Dynamic ID Adaptation:</strong> Must handle changing element identifiers</li>
+                        <li><strong>Deep Nesting Traversal:</strong> Generate efficient selectors for deeply nested elements</li>
+                        <li><strong>ARIA Recognition:</strong> Identify interactive elements beyond standard HTML</li>
+                        <li><strong>Unstable Element Targeting:</strong> Create reliable selectors without unique identifiers</li>
+                        <li><strong>DOM Mutation Resilience:</strong> Maintain accuracy through structural changes</li>
+                    </ul>
+                    
+                    <h3>Expected Behaviors:</h3>
+                    <ol>
+                        <li>Generate fallback selectors when primary identifiers change</li>
+                        <li>Optimize selector specificity vs. stability trade-offs</li>
+                        <li>Recognize semantic equivalence across different DOM structures</li>
+                        <li>Adapt to real-time DOM modifications</li>
+                        <li>Maintain performance under complex nested structures</li>
+                    </ol>
+                </div>
+            </section>
+
+            <!-- Edge Cases -->
+            <section id="edge-cases-section">
+                <h2>Edge Case Elements</h2>
+                
+                <div class="nested-container">
+                    <h4>Malformed HTML Simulation</h4>
+                    <div class="edge-case-container">
+                        <!-- Intentionally complex structure -->
+                        <div class="">
+                            <span class="  multiple   spaces  "></span>
+                            <div id="" class="empty-id"></div>
+                            <p class="123-invalid-class-name">Invalid class name</p>
+                            <button class="btn btn-primary" style="display:none;">Hidden button</button>
+                            <input type="text" value="" placeholder="">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="nested-container">
+                    <h4>Unicode and Special Characters</h4>
+                    <div class="unicode-test">
+                        <div id="测试-element" class="中文-class">Chinese characters in ID/class</div>
+                        <button class="emoji-🚀-class">Emoji in class name</button>
+                        <span data-test="special!@#$%^&*()">Special characters in attributes</span>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="../scripts/robustness.js"></script>
+    
+    <script>
+        // Additional page-specific functionality
+        function toggleConditionalField() {
+            const conditionalSection = document.querySelector('.conditional-section');
+            const isHidden = conditionalSection.style.display === 'none';
+            conditionalSection.style.display = isHidden ? 'block' : 'none';
+            
+            // Log this structural change
+            if (window.WebFASTRobustnessTest) {
+                window.WebFASTRobustnessTest.logEvent('conditional-field-toggle', {
+                    visible: isHidden,
+                    timestamp: Date.now()
+                });
+            }
+        }
+
+        // Form validation state changes
+        document.addEventListener('DOMContentLoaded', function() {
+            const validationInput = document.querySelector('[data-validation="dynamic"]');
+            if (validationInput) {
+                validationInput.addEventListener('input', function() {
+                    const validationMessage = this.parentElement.querySelector('.validation-message');
+                    const isValid = this.value.length > 3;
+                    
+                    validationMessage.style.display = 'block';
+                    validationMessage.textContent = isValid ? '✅ Valid input' : '❌ Too short';
+                    validationMessage.className = `validation-message ${isValid ? 'valid' : 'invalid'}`;
+                    
+                    this.className = `form-input ${isValid ? 'valid' : 'invalid'}`;
+                    
+                    if (window.WebFASTRobustnessTest) {
+                        window.WebFASTRobustnessTest.logEvent('validation-state-change', {
+                            isValid: isValid,
+                            inputLength: this.value.length,
+                            timestamp: Date.now()
+                        });
+                    }
+                });
+            }
+
+            // Add click handlers to edge case elements
+            document.querySelectorAll('.edge-case-container *, .unicode-test *').forEach(element => {
+                element.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    
+                    if (window.WebFASTRobustnessTest) {
+                        window.WebFASTRobustnessTest.logEvent('edge-case-click', {
+                            tagName: this.tagName,
+                            id: this.id,
+                            className: this.className,
+                            textContent: this.textContent?.trim(),
+                            timestamp: Date.now()
+                        });
+                    }
+                    
+                    // Visual feedback
+                    this.style.outline = '2px solid var(--color-primary)';
+                    setTimeout(() => {
+                        this.style.outline = '';
+                    }, 1000);
+                });
+            });
+        });
+    </script>
+
+    <style>
+        .deeply-nested {
+            border: 2px dashed #ccc;
+            margin: 1rem 0;
+        }
+        
+        .deeply-nested .level-1,
+        .deeply-nested .level-2,
+        .deeply-nested .level-3,
+        .deeply-nested .level-4,
+        .deeply-nested .level-5 {
+            padding: 0.5rem;
+            margin: 0.25rem;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+            background: rgba(248, 249, 250, 0.5);
+        }
+        
+        .target-element {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: #fff3cd;
+            border: 2px solid #ffc107;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.2s ease;
+        }
+        
+        .target-element:hover {
+            background: #ffeaa7;
+            transform: scale(1.05);
+        }
+        
+        .aria-button {
+            background: var(--color-danger);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            cursor: pointer;
+            display: inline-block;
+            transition: background-color 0.2s ease;
+            outline: none;
+            font-weight: 500;
+        }
+        
+        .aria-button:hover,
+        .aria-button:focus {
+            background: #c0392b;
+        }
+        
+        div[role="menuitem"] {
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background-color 0.2s ease;
+        }
+        
+        div[role="menuitem"]:hover,
+        div[role="menuitem"]:focus {
+            background: var(--color-primary-bg);
+            outline: 1px solid var(--color-primary);
+        }
+        
+        #unstable-list li {
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+            margin: 0.25rem 0;
+        }
+        
+        #unstable-list li:hover {
+            background: var(--color-primary-bg) !important;
+        }
+        
+        .form-row {
+            margin-bottom: 1rem;
+        }
+        
+        .form-input,
+        .form-select {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            transition: border-color 0.2s ease;
+        }
+        
+        .form-input.valid,
+        .form-select.valid {
+            border-color: var(--color-success);
+        }
+        
+        .form-input.invalid,
+        .form-select.invalid {
+            border-color: var(--color-danger);
+        }
+        
+        .validation-message {
+            font-size: 0.8rem;
+            margin-top: 0.25rem;
+        }
+        
+        .validation-message.valid {
+            color: var(--color-success);
+        }
+        
+        .validation-message.invalid {
+            color: var(--color-danger);
+        }
+        
+        .conditional-section {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 4px;
+            margin: 1rem 0;
+            border-left: 4px solid var(--color-primary);
+        }
+        
+        .test-controls {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+        
+        .metric-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            border: 1px solid var(--color-border);
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .metric-card h4 {
+            margin-bottom: 1rem;
+            color: var(--color-text-subtle);
+            font-size: 1rem;
+        }
+        
+        .metric-value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--color-primary);
+        }
+        
+        .edge-case-container,
+        .unicode-test {
+            border: 1px dashed #666;
+            padding: 1rem;
+            margin: 0.5rem 0;
+            background: rgba(255, 255, 255, 0.5);
+        }
+        
+        .edge-case-container *,
+        .unicode-test * {
+            margin: 0.25rem;
+            cursor: pointer;
+        }
+        
+        .test-description {
+            font-style: italic;
+            color: var(--color-text-subtle);
+            margin-top: 1rem;
+        }
+        
+        @media (max-width: 768px) {
+            .test-controls {
+                flex-direction: column;
+            }
+            
+            .test-controls .btn {
+                width: 100%;
+            }
+        }
+    </style>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Information Portal - WebFAST Test</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="main-header">
+            <h1>Product Information Portal</h1>
+            <p class="text-subtle">Cross-Tab Workflow Testing Environment</p>
+        </header>
+
+        <main>
+            <section>
+                <h2>Available Products</h2>
+                <p>Select products below to view detailed specifications. Each link opens in a new tab to simulate real-world multi-tab browsing behavior.</p>
+                
+                <div class="nav-links">
+                    <a href="product_a.html" target="_blank" id="product-a-link">
+                        📱 Product A - Smartphone
+                    </a>
+                    <a href="product_b.html" target="_blank" id="product-b-link">
+                        💻 Product B - Laptop
+                    </a>
+                    <a href="product_c.html" target="_blank" id="product-c-link">
+                        ⌚ Product C - Smartwatch
+                    </a>
+                </div>
+            </section>
+
+            <section>
+                <h2>Next Step</h2>
+                <p>After gathering information from the product pages above, proceed to the reporting interface:</p>
+                <a href="report.html" target="_blank" class="btn btn-primary" id="report-link">
+                    📊 Create Product Comparison Report
+                </a>
+            </section>
+
+            <section>
+                <h2>Test Scenario Instructions</h2>
+                <div class="callout callout-info">
+                    <p><strong>Workflow Pattern:</strong> This scenario tests cross-tab information gathering patterns:</p>
+                    <ol>
+                        <li>Open each product page in a new tab</li>
+                        <li>Extract key specifications from each product</li>
+                        <li>Navigate to the report page</li>
+                        <li>Complete the comparison form using gathered data</li>
+                    </ol>
+                    <p><strong>Expected WebFAST Behavior:</strong> The system should recognize this as a data collection workflow and potentially offer to automate the information extraction and form completion process.</p>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
